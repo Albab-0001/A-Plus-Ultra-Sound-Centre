@@ -1,12 +1,17 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from "../contexts/AuthContext";
 import { logout } from "../lib/auth";
+import ProfileIcon from './ProfileIcon';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const location = useLocation();
   const { user } = useAuth();
+  const navigate = useNavigate();
+  const profileDropdownRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -17,7 +22,41 @@ const Header = () => {
     { path: '/contact', label: 'Contact' },
   ];
 
+  // Profile is now only available in the dropdown, not in main navigation
+  const allNavItems = navItems;
+
   const isActive = (path: string) => location.pathname === path;
+
+  const toggleProfileDropdown = () => {
+    setIsProfileDropdownOpen(!isProfileDropdownOpen);
+  };
+
+  const handleProfileClick = () => {
+    navigate('/profile');
+    setIsProfileDropdownOpen(false);
+  };
+
+  const handleLogoutClick = () => {
+    logout();
+    setIsProfileDropdownOpen(false);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target as Node)) {
+        setIsProfileDropdownOpen(false);
+      }
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 text-gray-700 p-3 fixed w-full top-0 z-50">
@@ -34,7 +73,7 @@ const Header = () => {
           {/* Desktop Navigation - Center */}
           <nav className="hidden md:block">
             <ul className="flex space-x-4">
-              {navItems.map((item) => (
+              {allNavItems.map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
@@ -52,17 +91,38 @@ const Header = () => {
           </nav>
 
           {/* User Authentication - Right */}
-          <div className="hidden md:flex items-center space-x-4 ml-4">
+          <div className="hidden md:flex items-center ml-4">
             {user ? (
-              <>
-                <span className="text-sm text-gray-600">{user.email}</span>
-                <button 
-                  onClick={logout}
-                  className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 transition-colors"
-                >
-                  Logout
-                </button>
-              </>
+              <div className="relative" ref={profileDropdownRef}>
+                {/* Profile Icon with Dropdown */}
+                <ProfileIcon
+                  email={user.email}
+                  size="md"
+                  onClick={toggleProfileDropdown}
+                  showTooltip={false}
+                />
+                
+                {/* Dropdown Menu */}
+                {isProfileDropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 dropdown-enter">
+                    <button
+                      onClick={handleProfileClick}
+                      className="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center gap-3"
+                    >
+                      <i className="fas fa-user text-blue-500"></i>
+                      Profile
+                    </button>
+                    <div className="border-t border-gray-100 my-1"></div>
+                    <button
+                      onClick={handleLogoutClick}
+                      className="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors flex items-center gap-3"
+                    >
+                      <i className="fas fa-sign-out-alt text-red-500"></i>
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
             ) : (
               <Link 
                 to="/login"
@@ -102,9 +162,9 @@ const Header = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+      <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} ref={mobileMenuRef}>
         <div className="px-2 pt-2 pb-3 sm:px-3 bg-white rounded-lg mt-2 shadow-lg border border-gray-200">
-          {navItems.map((item) => (
+          {allNavItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
@@ -123,7 +183,26 @@ const Header = () => {
           <div className="border-t border-gray-200 pt-2 mt-2">
             {user ? (
               <>
-                <div className="px-3 py-2 text-sm text-gray-600">{user.email}</div>
+                {/* Mobile Profile Section */}
+                <div className="px-3 py-3 border-b border-gray-200 mb-2">
+                  <button
+                    onClick={() => {
+                      navigate('/profile');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="flex items-center gap-3 w-full text-left"
+                  >
+                    <ProfileIcon
+                      email={user.email}
+                      size="md"
+                    />
+                    <div>
+                      <p className="font-medium text-gray-900">{user.email?.split('@')[0] || 'User'}</p>
+                      <p className="text-sm text-gray-600">View Profile</p>
+                    </div>
+                  </button>
+                </div>
+                
                 <button 
                   onClick={() => {
                     logout();

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { toast } from 'sonner';
 
@@ -10,12 +9,34 @@ const Booking = () => {
     e.preventDefault();
     setIsLoading(true);
 
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    // Get form values
+    const firstName = formData.get("firstName") as string;
+    const lastName = formData.get("lastName") as string;
+
+    // Generate unique appointment ID
+    const appointmentId = 'APT-' + Math.floor(100000 + Math.random() * 900000);
+
     // Simulate booking process
     setTimeout(() => {
       setIsLoading(false);
-      toast.success('Appointment booked successfully! You will receive SMS and email confirmation shortly.');
-      (e.target as HTMLFormElement).reset();
+
+      // ✅ Show success toast with ID
+      toast.success(
+        `✅ Appointment booked successfully! Your appointment ID is ${appointmentId}. You will receive SMS and email confirmation shortly.`
+      );
+
+      form.reset();
       setUploadedFile(null);
+
+      // ✅ After 8 seconds redirect to WhatsApp
+      setTimeout(() => {
+        const phoneNumber = "917895317700"; // ✅ Your WhatsApp number
+        const bigMessage = `Dear Sir, \n My appointment has been successfully booked.\n\n Name: ${firstName} ${lastName}\n Appointment ID: ${appointmentId}\n\nPlease confirm my appointment. Thank you!`;
+        window.location.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(bigMessage)}`;
+      }, 8000);
     }, 2000);
   };
 
@@ -37,9 +58,10 @@ const Booking = () => {
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Book Your Appointment
         </h2>
-        
+
         <div className="bg-gray-200 p-8 md:p-12 rounded-2xl shadow-xl">
           <form onSubmit={handleSubmit} className="space-y-6">
+            
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="firstName" className="block text-sm font-semibold text-black mb-2">
@@ -66,9 +88,6 @@ const Booking = () => {
                 />
               </div>
             </div>
-           
-    
-            
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -128,9 +147,9 @@ const Booking = () => {
                   <option value="10:30">10:30 AM</option>
                   <option value="11:00">11:00 AM</option>
                   <option value="11:30">11:30 AM</option>
-                  <option value="11:30">12:00 PM</option>
-                  <option value="11:30">12:30 PM</option>
-                  <option value="11:30"><p>1:00 - 2:00 PM Lunch Time</p></option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="12:30">12:30 PM</option>
+                  <option disabled>1:00 - 2:00 PM Lunch Time</option>
                   <option value="14:00">2:00 PM</option>
                   <option value="14:30">2:30 PM</option>
                   <option value="15:00">3:00 PM</option>
@@ -153,53 +172,20 @@ const Booking = () => {
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
               >
                 <option value="">Select Scan Type</option>
-                <option value="pregnancy"> Ultrasound</option>
-                <option value="abdominal">4D Color Doppler</option>
-                <option value="pelvic">TVS (Transvaginal Scan)</option>
-                <option value="doppler">Mammography (Breast)</option>
-                <option value="3d4d">Level II Ultrasound</option>
-                <option value="breast">Liver Scan</option>
-                <option value="musculoskeletal">Gall Bladder</option>
-                <option value="anomaly">C.B.D. (Common Bile Duct)</option>
-                <option value="anomaly">Thyroid Scan</option>
-                <option value="anomaly">Upper Abdomen</option>
-                <option value="anomaly">Lower Abdomen</option>
-                <option value="anomaly">Whole Abdomen</option>
+                <option value="ultrasound">Ultrasound</option>
+                <option value="doppler">4D Color Doppler</option>
+                <option value="tvs">TVS (Transvaginal Scan)</option>
+                <option value="mammography">Mammography (Breast)</option>
+                <option value="level2">Level II Ultrasound</option>
+                <option value="liver">Liver Scan</option>
+                <option value="gallbladder">Gall Bladder</option>
+                <option value="cbd">C.B.D. (Common Bile Duct)</option>
+                <option value="thyroid">Thyroid Scan</option>
+                <option value="upperabdomen">Upper Abdomen</option>
+                <option value="lowerabdomen">Lower Abdomen</option>
+                <option value="wholeabdomen">Whole Abdomen</option>
               </select>
             </div>
-            {/*
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Upload Prescription (Optional)
-              </label>
-              <div
-                className={`file-upload-zone p-8 text-center rounded-lg cursor-pointer ${
-                  uploadedFile ? 'bg-green-50 border-green-300' : ''
-                }`}
-                onClick={() => document.getElementById('prescription')?.click()}
-              >
-                {uploadedFile ? (
-                  <>
-                    <i className="fas fa-check-circle text-4xl text-green-500 mb-4"></i>
-                    <p className="text-green-700">File uploaded: {uploadedFile}</p>
-                  </>
-                ) : (
-                  <>
-                    <i className="fas fa-cloud-upload-alt text-4xl text-blue-500 mb-4"></i>
-                    <p className="text-gray-600">Click to upload prescription or drag and drop</p>
-                  </>
-                )}
-                <input
-                  type="file"
-                  id="prescription"
-                  name="prescription"
-                  onChange={handleFileUpload}
-                  accept=".pdf,.jpg,.jpeg,.png"
-                  className="hidden"
-                />
-              </div>
-            </div>
-            */}
 
             <div>
               <label htmlFor="notes" className="block text-sm font-semibold text-black mb-2">
@@ -217,11 +203,11 @@ const Booking = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="bg-green-500  w-full  text-white  py-4 rounded-lg text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-green-500 w-full text-white py-4 rounded-lg text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <div className="flex items-center justify-center gap-3">
-                  <div className="spinner w-5 h-5 border-2"></div>
+                  <div className="spinner w-5 h-5 border-2 border-t-2 border-white rounded-full animate-spin"></div>
                   Booking...
                 </div>
               ) : (

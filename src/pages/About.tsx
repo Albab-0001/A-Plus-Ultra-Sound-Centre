@@ -33,8 +33,8 @@ const About = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto mt-[30px] mb-[30px]">
+    <section className="py-20 px-5">
+      <div className="max-w-4xl mx-auto mt-[30px] mb-[30px]">
         <div className="text-center mb-16">
            <h2 className="text-center text-4xl font-bold mb-6 text-gray-800">
       About A Plus Ultra Sound Centre

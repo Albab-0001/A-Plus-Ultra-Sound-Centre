@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import Booking from "./pages/Booking";
 import Reports from "./pages/Reports";
 import Contact from "./pages/Contact";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 
@@ -39,6 +40,7 @@ const App = () => {
               <Route path="booking" element={<Booking />} />
               <Route path="reports" element={<Reports />} />
               <Route path="contact" element={<Contact />} />
+              <Route path="profile" element={<Profile />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
