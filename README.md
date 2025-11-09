@@ -37,16 +37,13 @@ This project is built with:
 Follow these steps to set up the project locally:
 
 ```sh
-# Step 1: Clone the repository
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory
+# Step 1: Navigate to the project directory
 cd Client
 
-# Step 3: Install the necessary dependencies
+# Step 2: Install the necessary dependencies
 npm install
 
-# Step 4: Start the development server
+# Step 3: Start the development server
 npm run dev
 ```
 
@@ -89,11 +86,7 @@ Client/
 
 ### Code Editing
 
-You can edit the code using:
-
-- **Your preferred IDE** (VS Code, WebStorm, etc.)
-- **GitHub Codespaces** - Cloud-based development environment
-- **GitHub Web Editor** - Direct file editing in the browser
+You can edit the code using your preferred IDE (VS Code, WebStorm, etc.)
 
 ## Deployment
 
@@ -107,8 +100,8 @@ You can edit the code using:
 
 - **Vercel** - Optimized for Vite and React
 - **Netlify** - Easy deployment with continuous integration
-- **GitHub Pages** - Free hosting for static sites
 - **AWS S3 + CloudFront** - Scalable cloud hosting
+- **Firebase Hosting** - Easy deployment with Firebase integration
 
 ## Custom Domain
 
@@ -119,21 +112,13 @@ Yes, you can connect a custom domain to your deployed application!
 3. Add your custom domain in your hosting platform's settings
 4. Update any necessary environment variables
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## License
 
 This project is proprietary software for A Plus Ultra Sound Centre.
 
 ## Support
 
-For support, please contact the development team or open an issue in the repository.
+For support, please contact the development team.
 
 ## Acknowledgments
 
