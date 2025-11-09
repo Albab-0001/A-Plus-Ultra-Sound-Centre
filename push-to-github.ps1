@@ -45,5 +45,5 @@ git push origin master
 
 Write-Host ""
 Write-Host "=== Done! ===" -ForegroundColor Green
-Write-Host "Your code has been pushed to: https://github.com/Albab-0001/A-Plus-Ultra-Sound-Centre-" -ForegroundColor Cyan
+Write-Host "Your code has been pushed to: https://github.com/Albab-0001/A-Plus-Ultra-Sound-Centre" -ForegroundColor Cyan
 

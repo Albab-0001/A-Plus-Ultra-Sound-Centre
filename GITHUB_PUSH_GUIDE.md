@@ -2,7 +2,7 @@
 
 ## Current Status
 ✅ Git repository is initialized  
-✅ Remote repository is connected: `https://github.com/Albab-0001/A-Plus-Ultra-Sound-Centre-.git`  
+✅ Remote repository is connected: `https://github.com/Albab-0001/A-Plus-Ultra-Sound-Centre.git`  
 ✅ Changes are staged and ready to commit
 
 ## Steps to Push to GitHub
@@ -45,7 +45,7 @@ git push origin main
 ### Step 5: Verify Push
 After pushing, visit your GitHub repository:
 ```
-https://github.com/Albab-0001/A-Plus-Ultra-Sound-Centre-
+https://github.com/Albab-0001/A-Plus-Ultra-Sound-Centre
 ```
 
 ## If You Encounter Issues
@@ -61,7 +61,7 @@ If GitHub asks for authentication, you have two options:
 **Option 2: Use SSH (More Secure)**
 1. Generate SSH key: `ssh-keygen -t ed25519 -C "your_email@example.com"`
 2. Add SSH key to GitHub: Settings → SSH and GPG keys → New SSH key
-3. Change remote URL: `git remote set-url origin git@github.com:Albab-0001/A-Plus-Ultra-Sound-Centre-.git`
+3. Change remote URL: `git remote set-url origin git@github.com:Albab-0001/A-Plus-Ultra-Sound-Centre.git`
 4. Push again: `git push origin master`
 
 ### Issue: Branch Name Mismatch
@@ -145,7 +145,7 @@ If you want to host your website on GitHub Pages:
 1. Go to repository Settings → Pages
 2. Select source branch: `master` or `main`
 3. Select folder: `/root` or `/docs` (if you build to docs folder)
-4. Your site will be available at: `https://albab-0001.github.io/A-Plus-Ultra-Sound-Centre-/`
+4. Your site will be available at: `https://albab-0001.github.io/A-Plus-Ultra-Sound-Centre/`
 
 **Note**: For Vite projects, you may need to:
 - Build the project: `npm run build`
@@ -165,5 +165,5 @@ Make sure these files are in `.gitignore`:
 If you encounter any issues, check:
 - GitHub documentation: https://docs.github.com
 - Git documentation: https://git-scm.com/doc
-- Your repository: https://github.com/Albab-0001/A-Plus-Ultra-Sound-Centre-
+- Your repository: https://github.com/Albab-0001/A-Plus-Ultra-Sound-Centre
 

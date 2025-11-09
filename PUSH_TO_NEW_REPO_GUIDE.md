@@ -151,7 +151,7 @@ If you want to keep both repositories:
 
 1. **Add old repository as a second remote**:
    ```powershell
-   git remote add old-origin https://github.com/Albab-0001/A-Plus-Ultra-Sound-Centre-.git
+   git remote add old-origin https://github.com/Albab-0001/A-Plus-Ultra-Sound-Centre.git
    ```
 
 2. **Push to old repository when needed**:
