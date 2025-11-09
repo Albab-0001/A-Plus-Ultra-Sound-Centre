@@ -1,73 +1,142 @@
-# Welcome to your Lovable project
+# A Plus Ultra Sound Centre - Medical Center Management System
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/de0aec60-86e0-4cf2-b774-6350e491b45e
+A Plus Ultra Sound Centre is a comprehensive medical center management system built with modern web technologies. This application provides advanced diagnostic imaging services with cutting-edge technology and experienced professionals.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Patient Management**: Complete patient registration and profile management
+- **Appointment Booking**: Easy appointment scheduling system
+- **Medical Reports**: Secure access to medical reports and test results
+- **Service Catalog**: Comprehensive list of diagnostic services
+- **User Authentication**: Secure login and registration system
+- **Responsive Design**: Mobile-friendly interface for all devices
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/de0aec60-86e0-4cf2-b774-6350e491b45e) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** - Next generation frontend tooling
+- **TypeScript** - Type-safe JavaScript
+- **React** - Modern UI library
+- **React Router** - Client-side routing
+- **shadcn-ui** - High-quality UI components
+- **Tailwind CSS** - Utility-first CSS framework
+- **Firebase** - Authentication and backend services
 
-## How can I deploy this project?
+## Getting Started
 
-Simply open [Lovable](https://lovable.dev/projects/de0aec60-86e0-4cf2-b774-6350e491b45e) and click on Share -> Publish.
+### Prerequisites
 
-## Can I connect a custom domain to my Lovable project?
+- Node.js (v18 or higher) - [Install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- npm or yarn package manager
 
-Yes, you can!
+### Installation
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Follow these steps to set up the project locally:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```sh
+# Step 1: Clone the repository
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory
+cd Client
+
+# Step 3: Install the necessary dependencies
+npm install
+
+# Step 4: Start the development server
+npm run dev
+```
+
+The application will be available at `http://localhost:8080`
+
+### Building for Production
+
+```sh
+# Build the project
+npm run build
+
+# Preview the production build
+npm run preview
+```
+
+## Project Structure
+
+```
+Client/
+├── src/
+│   ├── components/     # Reusable React components
+│   ├── pages/          # Page components
+│   ├── contexts/       # React contexts (Auth, etc.)
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utility functions and configurations
+│   └── main.tsx        # Application entry point
+├── public/             # Static assets
+└── package.json        # Project dependencies
+```
+
+## Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+### Code Editing
+
+You can edit the code using:
+
+- **Your preferred IDE** (VS Code, WebStorm, etc.)
+- **GitHub Codespaces** - Cloud-based development environment
+- **GitHub Web Editor** - Direct file editing in the browser
+
+## Deployment
+
+### Build and Deploy
+
+1. Build the project: `npm run build`
+2. The `dist/` folder contains the production-ready files
+3. Deploy the `dist/` folder to your hosting provider
+
+### Recommended Hosting Platforms
+
+- **Vercel** - Optimized for Vite and React
+- **Netlify** - Easy deployment with continuous integration
+- **GitHub Pages** - Free hosting for static sites
+- **AWS S3 + CloudFront** - Scalable cloud hosting
+
+## Custom Domain
+
+Yes, you can connect a custom domain to your deployed application!
+
+1. Deploy your application to your preferred hosting platform
+2. Configure your domain's DNS settings
+3. Add your custom domain in your hosting platform's settings
+4. Update any necessary environment variables
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is proprietary software for A Plus Ultra Sound Centre.
+
+## Support
+
+For support, please contact the development team or open an issue in the repository.
+
+## Acknowledgments
+
+- Built with modern web technologies
+- UI components from shadcn-ui
+- Icons from Font Awesome and Lucide React
