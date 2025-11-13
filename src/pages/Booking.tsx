@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { toast } from 'sonner';
 
 const Booking = () => {
+  const [searchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
+  const [selectedScanType, setSelectedScanType] = useState<string>('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,6 +33,8 @@ const Booking = () => {
 
       form.reset();
       setUploadedFile(null);
+      // Reset scan type - if URL has parameter, useEffect will set it again
+      setSelectedScanType('');
 
       // ✅ After 8 seconds redirect to WhatsApp
       setTimeout(() => {
@@ -52,8 +57,23 @@ const Booking = () => {
   tomorrow.setDate(tomorrow.getDate() + 1);
   const minDate = tomorrow.toISOString().split('T')[0];
 
+  // Get scan type from URL parameter and set it as default
+  useEffect(() => {
+    const scanTypeFromUrl = searchParams.get('scanType');
+    if (scanTypeFromUrl) {
+      setSelectedScanType(scanTypeFromUrl);
+    }
+  }, [searchParams]);
+
   return (
-    <section className="py-20 px-4">
+    <section 
+        id="booking" 
+        className="px-4 bg-white"
+        style={{
+          paddingTop: 'var(--booking-padding-top, 6rem)',
+          paddingBottom: 'var(--booking-padding-bottom, 3rem)'
+        }}
+      >
       <div className="max-w-2xl mx-auto mt-[30px] mb-[30px]">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Book Your Appointment
@@ -168,6 +188,8 @@ const Booking = () => {
               <select
                 id="scanType"
                 name="scanType"
+                value={selectedScanType}
+                onChange={(e) => setSelectedScanType(e.target.value)}
                 required
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
               >

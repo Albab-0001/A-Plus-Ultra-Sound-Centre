@@ -33,7 +33,14 @@ const About = () => {
   ];
 
   return (
-    <section className="py-20 px-5">
+    <section 
+        id="booking" 
+        className="px-4 bg-white"
+        style={{
+          paddingTop: 'var(--booking-padding-top, 6rem)',
+          paddingBottom: 'var(--booking-padding-bottom, 1rem)'
+        }}
+      >
       <div className="max-w-4xl mx-auto mt-[30px] mb-[30px]">
         <div className="text-center mb-16">
            <h2 className="text-center text-4xl font-bold mb-6 text-gray-800">

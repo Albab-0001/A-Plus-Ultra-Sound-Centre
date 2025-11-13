@@ -34,7 +34,14 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 px-4">
+    <section 
+        id="booking" 
+        className="px-4 bg-white"
+        style={{
+          paddingTop: 'var(--booking-padding-top, 6rem)',
+          paddingBottom: 'var(--booking-padding-bottom, 4rem)'
+        }}
+      >
       <div className="max-w-6xl mx-auto mt-[30px] mb-[30px]">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Contact Us
