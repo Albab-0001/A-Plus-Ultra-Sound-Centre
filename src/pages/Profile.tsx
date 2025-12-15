@@ -136,8 +136,8 @@ const Profile = () => {
 
         {/* Navigation Tabs */}
         <div className="bg-white rounded-2xl shadow-xl mb-6 md:mb-8 profile-slide-in">
-          <div className="border-b border-gray-200 overflow-x-auto">
-            <nav className="flex space-x-4 sm:space-x-6 md:space-x-8 px-4 sm:px-6 md:px-8 min-w-max md:min-w-0">
+          <div>
+            <nav className="flex flex-nowrap justify-between gap-2 sm:gap-3 md:gap-4 px-3 sm:px-4 md:px-6">
               {[
                 { id: 'profile', label: 'Profile', icon: 'fas fa-user' },
                 { id: 'appointments', label: 'Appointments', icon: 'fas fa-calendar' },
@@ -147,7 +147,7 @@ const Profile = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-1.5 sm:gap-2 py-3 sm:py-4 px-1 border-b-2 font-medium text-xs sm:text-sm whitespace-nowrap transition-colors ${
+                  className={`flex flex-1 min-w-0 items-center justify-center gap-1 sm:gap-1.5 py-2.5 sm:py-3 px-2 sm:px-3 md:px-4 text-[11px] sm:text-xs md:text-sm font-medium whitespace-nowrap transition-colors border-b ${
                     activeTab === tab.id
                       ? 'border-blue-500 text-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
