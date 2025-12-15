@@ -60,14 +60,14 @@ const Reports = () => {
         }}
       >
       <div className="max-w-6xl mx-auto mt-[30px] mb-[30px]">
-        <h2 className="text-4xl font-bold text-center mb-7 text-black">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-7 text-black">
           Patient Report Portal
         </h2>
-        <h3 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-yellow-300 via-yellow-300 to-yellow-300 bg-clip-text text-transparent">
+        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 bg-gradient-to-r from-yellow-300 via-yellow-300 to-yellow-300 bg-clip-text text-transparent">
   You can Download your report from here!......
 </h3>
 
-        <h6 className="text-3xl font-bold text-center mb-12 text-black">
+        <h6 className="text-lg md:text-xl lg:text-2xl font-bold text-center mb-8 md:mb-12 text-black">
           Just Enter Your Patient ID and Phone Number
         </h6>
 
@@ -78,7 +78,7 @@ const Reports = () => {
         {!isLoggedIn ? (
           <div className="max-w-md mx-auto">
             <div className="bg-gray-200 p-8 rounded-2xl shadow-xl">
-              <h3 className="text-2xl font-semibold text-center mb-8 text-black">
+              <h3 className="text-xl md:text-2xl font-semibold text-center mb-6 md:mb-8 text-black">
                 Secure Login
               </h3>
               <form onSubmit={handleLogin} className="space-y-6">
@@ -123,7 +123,7 @@ const Reports = () => {
                 </div> */}
                 <button
                   type="submit"
-                  className="w-full bg-green-500 text-white py-3 rounded-lg text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
+                  className="w-full bg-green-500 text-white py-2 md:py-3 rounded-lg text-base md:text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
                 >
                   Access Reports
                 </button>
@@ -132,7 +132,7 @@ const Reports = () => {
           </div>
         ) : (
           <div>
-            <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800">
+            <h3 className="text-xl md:text-2xl font-semibold text-center mb-6 md:mb-8 text-gray-800">
               Your Reports
             </h3>
             <div className="space-y-4 mb-8">
@@ -142,7 +142,7 @@ const Reports = () => {
                   className="bg-white p-6 rounded-lg shadow-lg flex justify-between items-center card-hover"
                 >
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-800">
+                    <h4 className="text-base md:text-lg font-semibold text-gray-800">
                       {report.title}
                     </h4>
                     <p className="text-gray-600">
@@ -162,7 +162,7 @@ const Reports = () => {
             <div className="text-center">
               <button
                 onClick={handleLogout}
-                className="gradient-gold text-gray-800 px-8 py-3 rounded-lg text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
+                className="gradient-gold text-gray-800 px-6 md:px-8 py-2 md:py-3 rounded-lg text-base md:text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
               >
                 Logout
               </button>

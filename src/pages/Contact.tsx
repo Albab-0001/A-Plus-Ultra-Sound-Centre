@@ -43,7 +43,7 @@ const Contact = () => {
         }}
       >
       <div className="max-w-6xl mx-auto mt-[30px] mb-[30px]">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">
           Contact Us
         </h2>
 
@@ -53,14 +53,14 @@ const Contact = () => {
   className="text-black p-8 rounded-2xl"
   style={{ backgroundColor: 'rgba(242, 230, 222, 1)' }}
 >
-  <h3 className="text-2xl font-semibold mb-8">Get in Touch</h3>
+  <h3 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8">Get in Touch</h3>
 
   <div className="space-y-6">
     {contactInfo.map((info, index) => (
       <div key={index} className="flex items-start gap-4 fade-in">
-        <i className={`${info.icon} text-2xl ${getIconColor(info.title)} mt-1`}></i>
+        <i className={`${info.icon} text-xl md:text-2xl ${getIconColor(info.title)} mt-1`}></i>
         <div>
-          <h4 className="font-semibold text-lg mb-1">{info.title}</h4>
+          <h4 className="font-semibold text-base md:text-lg mb-1">{info.title}</h4>
           <p className="text-black whitespace-pre-line leading-relaxed">
             {info.content}
           </p>

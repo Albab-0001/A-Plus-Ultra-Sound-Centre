@@ -75,7 +75,7 @@ const Booking = () => {
         }}
       >
       <div className="max-w-2xl mx-auto mt-[30px] mb-[30px]">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">
           Book Your Appointment
         </h2>
 
@@ -225,7 +225,7 @@ const Booking = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="bg-green-500 w-full text-white py-4 rounded-lg text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-green-500 w-full text-white py-3 md:py-4 rounded-lg text-base md:text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <div className="flex items-center justify-center gap-3">

@@ -314,13 +314,13 @@ const testimonials = [
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/booking"
-              className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-lg"
+              className="bg-green-500 hover:bg-green-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-semibold transition-all duration-300 hover:shadow-lg"
             >
               Book Your Appointment
             </Link>
             <Link
               to="/services"
-              className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300"
+              className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-semibold transition-all duration-300"
             >
               Explore Services
             </Link>
@@ -346,7 +346,7 @@ const testimonials = [
         }}
       >
         <div className="max-w-6xl mx-auto mt-[30px] mb-[30px]">
-          <h2 className="text-4xl font-bold text-center mb-12 text-black">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-black">
             Facilities Available
           </h2>
 
@@ -369,31 +369,31 @@ const testimonials = [
 <section 
   className="bg-gradient-to-b from-white to-indigo-50"
   style={{
-    paddingTop: 'var(--testimonials-padding-top, 2rem)',
-    paddingBottom: 'var(--testimonials-padding-bottom, 5rem)'
+    paddingTop: 'var(--testimonials-padding-top, 3rem)',
+    paddingBottom: 'var(--testimonials-padding-bottom, 3rem)'
   }}
 >
   <div className="w-full max-w-full mx-auto px-4">
 
-    <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-indigo-900 mb-4">
+    <div className="text-center">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-indigo-900 mb-3 sm:mb-4">
               Our Patient Success Stories
             </h2>
-      <div className="w-80 h-1 bg-indigo-500 mx-auto mb-6"></div>
+      <div className="w-48 sm:w-64 md:w-80 h-1 bg-indigo-500 mx-auto mb-4 sm:mb-6"></div>
       
-      <p className="text-lg text-indigo-800 max-w-3xl mx-auto">
+      <p className="text-sm md:text-base lg:text-lg text-indigo-800 max-w-3xl mx-auto px-2 mb-6 sm:mb-8 md:mb-10">
         Hear you can see what our patients say about their experiences.
       </p>
     </div>
     
-   <div className="relative">
-  <div className="relative bg-white/90 p-8 rounded-2xl shadow-lg border border-indigo-200">
+   <div className="relative mb-6 sm:mb-8 md:mb-10">
+  <div className="relative bg-white/90 p-3 sm:p-5 md:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-indigo-200 overflow-hidden">
     <InfiniteMovingCards
       items={testimonials}
       direction="left"
       speed="slow"
       pauseOnHover={true}
-      className="max-w-10xl mx-auto"
+      className="max-w-full sm:max-w-6xl lg:max-w-7xl mx-auto"
     />
   </div>
 </div>
@@ -404,14 +404,13 @@ const testimonials = [
       {/* CTA Section */}
       {/* Adjust space --> AK */}
       <section 
-        className="bg-indigo-800 text-white"
+        className="bg-indigo-800 text-white pt-6 sm:pt-8 md:pt-10"
         style={{
-          paddingTop: 'var(--cta-padding-top, 2rem)',
           paddingBottom: 'var(--cta-padding-bottom, 2rem)'
         }}
       >
         <div className="max-w-4xl mx-auto text-center px-1">
-          <h6 className="text-1xl md:text-2xl font-bold mb-3">
+          <h6 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-3">
 
             Ready for Your Diagnostic Test?
           </h6>
@@ -420,7 +419,7 @@ const testimonials = [
           </p>
           <Link
             to="/booking"
-            className="bg-white text-indigo-800 hover:bg-green-600 px-10 py-3 rounded-lg text-lg font-bold inline-block transition-all duration-300 hover:shadow-lg"
+            className="bg-white text-indigo-800 hover:bg-green-600 px-6 md:px-10 py-2 md:py-3 rounded-lg text-base md:text-lg font-bold inline-block transition-all duration-300 hover:shadow-lg"
           >
             Book Now
           </Link>
@@ -438,7 +437,7 @@ const testimonials = [
         }}
       >
         <div className="max-w-2xl mx-auto mt-[30px] mb-[30px]">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">
             Book Your Appointment
           </h2>
 
@@ -587,7 +586,7 @@ const testimonials = [
               <button
                 type="submit"
                 disabled={isLoading}
-                className="bg-green-500 w-full text-white py-4 rounded-lg text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-green-500 w-full text-white py-3 md:py-4 rounded-lg text-base md:text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <div className="flex items-center justify-center gap-3">
@@ -614,20 +613,20 @@ const testimonials = [
         }}
       >
         <div className="max-w-6xl mx-auto mt-[30px] mb-[30px]">
-          <h2 className="text-4xl font-bold text-center mb-7 text-black">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-7 text-black">
             Patient Report Portal
           </h2>
-          <h3 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-yellow-300 via-yellow-300 to-yellow-300 bg-clip-text text-transparent">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 bg-gradient-to-r from-yellow-300 via-yellow-300 to-yellow-300 bg-clip-text text-transparent">
             You can Download your report from here!......
           </h3>
-          <h6 className="text-3xl font-bold text-center mb-12 text-black">
+          <h6 className="text-lg md:text-xl lg:text-2xl font-bold text-center mb-8 md:mb-12 text-black">
             Just Enter Your Patient ID and Phone Number
           </h6>
 
           {!isLoggedIn ? (
             <div className="max-w-md mx-auto">
               <div className="bg-gray-200 p-8 rounded-2xl shadow-xl">
-                <h3 className="text-2xl font-semibold text-center mb-8 text-black">
+                <h3 className="text-xl md:text-2xl font-semibold text-center mb-6 md:mb-8 text-black">
                   Secure Login
                 </h3>
                 <form onSubmit={handleReportsLogin} className="space-y-6">
@@ -661,7 +660,7 @@ const testimonials = [
 
                   <button
                     type="submit"
-                    className="w-full bg-green-500 text-white py-3 rounded-lg text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
+                    className="w-full bg-green-500 text-white py-2 md:py-3 rounded-lg text-base md:text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
                   >
                     Access Reports
                   </button>
@@ -670,7 +669,7 @@ const testimonials = [
             </div>
           ) : (
             <div>
-              <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800">
+              <h3 className="text-xl md:text-2xl font-semibold text-center mb-6 md:mb-8 text-gray-800">
                 Your Reports
               </h3>
               <div className="space-y-4 mb-8">
@@ -680,7 +679,7 @@ const testimonials = [
                     className="bg-white p-6 rounded-lg shadow-lg flex justify-between items-center card-hover"
                   >
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-800">
+                      <h4 className="text-base md:text-lg font-semibold text-gray-800">
                         {report.title}
                       </h4>
                       <p className="text-gray-600">
@@ -700,7 +699,7 @@ const testimonials = [
               <div className="text-center">
                 <button
                   onClick={handleLogout}
-                  className="gradient-gold text-gray-800 px-8 py-3 rounded-lg text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
+                  className="gradient-gold text-gray-800 px-6 md:px-8 py-2 md:py-3 rounded-lg text-base md:text-lg font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
                 >
                   Logout
                 </button>
@@ -722,17 +721,17 @@ const testimonials = [
       >
         <div className="max-w-4xl mx-auto mt-[30px] mb-[30px]">
           <div className="text-center mb-16">
-            <h2 className="text-center text-4xl font-bold mb-6 text-gray-800">
+            <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-gray-800">
               About A Plus Ultra Sound Centre
             </h2>
-            <p className="text-left text-xl leading-relaxed text-gray-600">
+            <p className="text-left text-base md:text-lg lg:text-xl leading-relaxed text-gray-600">
               A Plus Ultra Sound Centre is a fully computerized pathology lab with state-of-the-art ultrasound technology. We provide comprehensive diagnostic imaging services with experienced medical professionals and modern equipment.
               <br />Our center is dedicated to delivering accurate, timely, and affordable diagnostic results that assist in effective medical decision-making. With a patient-first approach, we ensure a comfortable and hygienic environment, along with advanced imaging techniques that support early detection and treatment. A Plus Ultra Sound Centre is committed to improving community health by offering reliable services tailored to the needs of every individual.
             </p>
           </div>
 
           <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center mb-12 text-gray-800">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">
               Meet Our Expert Team
             </h3>
             <AnimatedTestimonials testimonials={aboutTestimonials} autoplay />
@@ -751,7 +750,7 @@ const testimonials = [
         }}
       >
         <div className="max-w-6xl mx-auto mt-[30px] mb-[30px]">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">
             Contact Us
           </h2>
 
@@ -760,13 +759,13 @@ const testimonials = [
               className="text-black p-8 rounded-2xl"
               style={{ backgroundColor: 'rgba(242, 230, 222, 1)' }}
             >
-              <h3 className="text-2xl font-semibold mb-8">Get in Touch</h3>
+              <h3 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8">Get in Touch</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start gap-4 fade-in">
                     <i className={`${info.icon} text-2xl ${getIconColor(info.title)} mt-1`}></i>
                     <div>
-                      <h4 className="font-semibold text-lg mb-1">{info.title}</h4>
+                      <h4 className="font-semibold text-base md:text-lg mb-1">{info.title}</h4>
                       <p className="text-black whitespace-pre-line leading-relaxed">
                         {info.content}
                       </p>

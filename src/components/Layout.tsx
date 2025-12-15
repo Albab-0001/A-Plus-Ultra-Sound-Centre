@@ -15,9 +15,3 @@ const Layout = () => {
 };
 
 export default Layout;
-    <div className="-ml-4">
-  <h3 className="text-2xl font-semibold mb-4 text-white">A Plus Ultrasound Centre</h3>
-  <p className="text-sm">
-    A modern, fully-computerized pathology and <br /> imaging center with state-of-the-art ultrasound <br /> and diagnostic technologies.
-  </p>
-</div>

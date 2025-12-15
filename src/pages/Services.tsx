@@ -99,7 +99,7 @@ const Services = () => {
       >
       <div className="max-w-6xl mx-auto mt-[30px] mb-[30px]">
 
-        <h2 className="text-4xl font-bold text-center mb-12 text-black">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-black">
           Facilities Available
         </h2>
 

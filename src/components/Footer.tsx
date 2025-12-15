@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1: About */}
         <div>
-          <h3 className="text-2xl font-semibold mb-4 text-white">A Plus Ultrasound Centre</h3>
+          <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-white">A Plus Ultrasound Centre</h3>
           <p className="text-sm">
             A modern, fully-computerized pathology and <br />
             imaging center with state-of-the-art ultrasound <br />

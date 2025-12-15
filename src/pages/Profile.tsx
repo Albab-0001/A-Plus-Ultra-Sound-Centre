@@ -97,10 +97,10 @@ const Profile = () => {
 
             {/* Profile Info */}
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
                 Welcome back, {user?.email?.split('@')[0] || 'User'}!
               </h1>
-              <p className="text-lg text-gray-600 mb-4">{user?.email}</p>
+              <p className="text-base md:text-lg text-gray-600 mb-4">{user?.email}</p>
               <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                 <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
                   Patient ID: {user?.uid?.substring(0, 8) || 'N/A'}
@@ -159,7 +159,7 @@ const Profile = () => {
           <div className="p-8">
             {activeTab === 'profile' && (
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Personal Information</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Personal Information</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
@@ -225,14 +225,14 @@ const Profile = () => {
 
             {activeTab === 'appointments' && (
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Appointment History</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Appointment History</h3>
                 <div className="space-y-4">
                   {mockAppointments.map((appointment) => (
                     <div key={appointment.id} className="bg-gray-50 rounded-lg p-6 border border-gray-200">
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-2">
-                            <h4 className="text-lg font-semibold text-gray-900">{appointment.service}</h4>
+                            <h4 className="text-base md:text-lg font-semibold text-gray-900">{appointment.service}</h4>
                             <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(appointment.status)}`}>
                               {appointment.status}
                             </span>
@@ -258,13 +258,13 @@ const Profile = () => {
 
             {activeTab === 'reports' && (
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Medical Reports</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Medical Reports</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   {mockReports.map((report) => (
                     <div key={report.id} className="bg-gray-50 rounded-lg p-6 border border-gray-200">
                       <div className="flex items-start justify-between mb-4">
                         <div>
-                          <h4 className="text-lg font-semibold text-gray-900 mb-2">{report.title}</h4>
+                          <h4 className="text-base md:text-lg font-semibold text-gray-900 mb-2">{report.title}</h4>
                           <p className="text-gray-600 mb-1">Report ID: {report.id}</p>
                           <p className="text-gray-600">Date: {report.date}</p>
                         </div>
@@ -288,10 +288,10 @@ const Profile = () => {
 
             {activeTab === 'settings' && (
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Account Settings</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Account Settings</h3>
                 
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Security</h4>
+                  <h4 className="text-base md:text-lg font-semibold text-gray-900 mb-4">Security</h4>
                   <div className="space-y-4">
                     <button className="w-full text-left bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors">
                       <div className="flex items-center justify-between">
@@ -315,7 +315,7 @@ const Profile = () => {
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Notifications</h4>
+                  <h4 className="text-base md:text-lg font-semibold text-gray-900 mb-4">Notifications</h4>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div>
@@ -341,7 +341,7 @@ const Profile = () => {
                 </div>
 
                 <div className="bg-red-50 rounded-lg p-6 border border-red-200">
-                  <h4 className="text-lg font-semibold text-red-900 mb-4">Danger Zone</h4>
+                  <h4 className="text-base md:text-lg font-semibold text-red-900 mb-4">Danger Zone</h4>
                   <p className="text-red-700 mb-4">Once you delete your account, there is no going back. Please be certain.</p>
                   <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
                     Delete Account
@@ -355,7 +355,7 @@ const Profile = () => {
         {/* Logout Section */}
         <div className="bg-white rounded-2xl shadow-xl p-8 profile-scale-in">
           <div className="text-center">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Ready to leave?</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Ready to leave?</h3>
             <p className="text-gray-600 mb-6">Click the button below to log out of your account.</p>
             <button
               onClick={handleLogout}
