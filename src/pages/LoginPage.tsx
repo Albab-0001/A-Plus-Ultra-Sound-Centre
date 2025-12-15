@@ -25,12 +25,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-blue-50 flex items-center justify-center px-4 py-12">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-blue-50 flex items-center justify-center px-4 py-12 pt-24 md:pt-12">
+      <div className="max-w-md w-full space-y-6 md:space-y-8">
         {/* Header */}
         <div className="text-center">
-          <div className="mx-auto h-16 w-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-6">
-            <i className="fas fa-user text-white text-2xl"></i>
+          <div className="mx-auto h-14 w-14 md:h-16 md:w-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-4 md:mb-6">
+            <i className="fas fa-user text-white text-xl md:text-2xl"></i>
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Welcome Back
@@ -41,8 +41,8 @@ export default function LoginPage() {
         </div>
 
         {/* Form */}
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 sm:p-6 md:p-8">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             {error && (
               <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                 <div className="flex">
@@ -92,7 +92,7 @@ export default function LoginPage() {
               </div>
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
               <div className="flex items-center">
                 <input
                   id="remember-me"
